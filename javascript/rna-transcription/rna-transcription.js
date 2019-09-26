@@ -6,15 +6,45 @@
 //* `A` -> `U`
 
 export const toRna = dna => {
-  dna = dna.toString();
-  let rna = dna.replace("G", "C");
-  console.log(rna);
-  rna = dna.replace("C", "G");
-  console.log(rna);
-  rna = dna.replace("T", "A");
-  console.log(rna);
-  rna = dna.replace("A", "U");
-  console.log(rna);
+  const pairings = {
+    G: "C",
+    C: "G",
+    T: "A",
+    A: "U"
+  };
 
-  return rna;
+  const newStrand = dna
+    .toString()
+    .split("")
+    .map(item => pairings[item]);
+
+  return newStrand.join("");
 };
+
+// const translation = {
+//   G: "C",
+//   C: "G",
+//   T: "A",
+//   A: "U"
+// };
+
+// export const toRna = key => {
+//   let newValue = "";
+
+//   for (let k of key) {
+//     newValue += translation[k];
+//   }
+
+//   return newValue;
+// };
+
+// export const toRna = (dnaStrand) => {
+//   return dnaStrand.replace(/./g, c => complements[c]);
+// };
+
+// const complements = {
+//   'C': 'G',
+//   'G': 'C',
+//   'T': 'A',
+//   'A': 'U',
+// };
