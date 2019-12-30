@@ -10,13 +10,15 @@ export const isPangram = string => {
 
 	const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
-	let bool = true;
+	return new Set(sentence.match(letters)).size >= 26;
 
-	letters.forEach(letter => {
-		if (!sentence.includes(letter)) {
-			bool = false;
-		}
-	});
+	//let bool = true;
 
-	return bool;
+	//letters.forEach(letter => {
+	//if (!sentence.includes(letter)) {
+	//bool = false;
+	//}
+	//});
+
+	//return bool;
 };
